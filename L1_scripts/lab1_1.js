@@ -47,6 +47,8 @@ const personalMovieDB = {
     showMyDB: function(hidden) {
         if (!hidden) {
             console.log(personalMovieDB);
+        } else {
+            console.log("Access denied");
         }
     },
 
@@ -56,5 +58,16 @@ const personalMovieDB = {
         }
     },
 
-    private:false
+    toggleVisibleMyDB: function(hidden) {
+        if (!hidden) {
+            personalMovieDB.private = true;
+        } else {
+            personalMovieDB.private = false;
+        }
+    },
+
+    private:false,
    };
+
+personalMovieDB.toggleVisibleMyDB(personalMovieDB.private);
+personalMovieDB.showMyDB();
