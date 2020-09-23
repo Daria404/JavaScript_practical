@@ -60,6 +60,9 @@ const personalMovieDB = {
                 alert("Incorrect input!"); 
             } 
         }
+        personalMovieDB.genres.forEach(function(item, i) {
+                console.log(`Favorite genre number ${i+1} is ${item}.`);
+             });
     },
 
     toggleVisibleMyDB: function(hidden) {
@@ -72,7 +75,7 @@ const personalMovieDB = {
 
     private:false,
    };
-   
+
 personalMovieDB.writeMyGenres();
 // personalMovieDB.toggleVisibleMyDB(personalMovieDB.private);
 personalMovieDB.showMyDB();
