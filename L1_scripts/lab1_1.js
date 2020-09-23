@@ -4,20 +4,19 @@ let numberOfFilms;
 
 
 
-function start(){
-    numberOfFilms = +prompt("How many movies have U already seen?","");
-    
-    while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)){
-        numberOfFilms = +prompt("How many movies have U already seen?","");
-    }
-}
-start();
-
 const personalMovieDB = {
     count:numberOfFilms,
     movies: {},
     actors:{},
     genres:[],
+    start: function () {
+        numberOfFilms = +prompt("How many movies have U already seen?","");
+        
+        while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)){
+            numberOfFilms = +prompt("How many movies have U already seen?","");
+        }
+    },
+
     private:false
    };
 
