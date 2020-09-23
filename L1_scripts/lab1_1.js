@@ -1,20 +1,16 @@
 "use strict";
 
-let numberOfFilms;
-
-
-
 const personalMovieDB = {
-    count:numberOfFilms,
+    count:0,
     movies: {},
     actors:{},
     genres:[],
     
     start: function () {
-        numberOfFilms = +prompt("How many movies have U already seen?","");
-        
-        while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)){
-            numberOfFilms = +prompt("How many movies have U already seen?","");
+        personalMovieDB.count = +prompt("How many movies have U already seen?","");
+    
+        while (personalMovieDB.count == "" || personalMovieDB.count == null || isNaN(personalMovieDB.count)){
+            personalMovieDB.count = +prompt("How many movies have U already seen?","");
         }
     },
 
@@ -75,7 +71,9 @@ const personalMovieDB = {
 
     private:false,
    };
-
-personalMovieDB.writeMyGenres();
+personalMovieDB.start();
+// personalMovieDB.rememberMyMovies();
+// personalMovieDB.detectPersonalLvl();
+// personalMovieDB.writeMyGenres();
 // personalMovieDB.toggleVisibleMyDB(personalMovieDB.private);
 personalMovieDB.showMyDB();
