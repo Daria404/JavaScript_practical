@@ -55,6 +55,10 @@ const personalMovieDB = {
     writeMyGenres() {
         for (let i = 0; i < 3; i++){
             personalMovieDB.genres[i]= prompt(`Your favorite genre number ${i+1}`,"");
+            if (personalMovieDB.genres[i] == null || personalMovieDB.genres[i] == "") { 
+                i--;
+                alert("Incorrect input!"); 
+            } 
         }
     },
 
@@ -68,6 +72,7 @@ const personalMovieDB = {
 
     private:false,
    };
-
-personalMovieDB.toggleVisibleMyDB(personalMovieDB.private);
+   
+personalMovieDB.writeMyGenres();
+// personalMovieDB.toggleVisibleMyDB(personalMovieDB.private);
 personalMovieDB.showMyDB();
