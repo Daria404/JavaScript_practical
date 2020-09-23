@@ -16,23 +16,21 @@ const personalMovieDB = {
             numberOfFilms = +prompt("How many movies have U already seen?","");
         }
     },
-
+    rememberMyMovies: function() {
+        for (let i = 0; i < 2;  i++) {
+            const lastMovieName = prompt("Which movie have U seen recently?",""),
+                  ratelastMovie = +prompt("Rate this movie, please","");
+            if (lastMovieName != null && ratelastMovie != null && lastMovieName != "" && ratelastMovie != 0 && lastMovieName.length <50) { 
+                personalMovieDB.movies[lastMovieName]= ratelastMovie; 
+            } else{
+                i--;
+                alert("Incorrect name or rate!");
+            }
+        }
+    },
     private:false
    };
 
-function rememberMyMovies(){
-    for (let i = 0; i < 2;  i++) {
-        const lastMovieName = prompt("Which movie have U seen recently?",""),
-              ratelastMovie = +prompt("Rate this movie, please","");
-        if (lastMovieName != null && ratelastMovie != null && lastMovieName != "" && ratelastMovie != 0 && lastMovieName.length <50) { 
-            personalMovieDB.movies[lastMovieName]= ratelastMovie; 
-        } else{
-            i--;
-            alert("Incorrect name or rate!");
-        }
-    }
-}
-rememberMyMovies();
 
 function detectPersonalLvl(){
     if (personalMovieDB.count > 0 && personalMovieDB.count < 10) {
