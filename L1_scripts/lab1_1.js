@@ -61,11 +61,11 @@ const personalMovieDB = {
              });
     },
 
-    toggleVisibleMyDB: function(hidden) {
-        if (!hidden) {
-            personalMovieDB.private = true;
-        } else {
+    toggleVisibleMyDB: function() {
+        if (personalMovieDB.private) {
             personalMovieDB.private = false;
+        } else {
+            personalMovieDB.private = true;
         }
     },
 
