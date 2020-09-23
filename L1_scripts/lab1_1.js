@@ -56,12 +56,12 @@ const personalMovieDB = {
                 alert("Incorrect input!"); 
             } 
         }
-        personalMovieDB.genres.forEach(function(item, i) {
+        personalMovieDB.genres.forEach((item, i) => {
                 console.log(`Favorite genre number ${i+1} is ${item}.`);
              });
     },
 
-    toggleVisibleMyDB: function() {
+    toggleVisibleMyDB: function () {
         if (personalMovieDB.private) {
             personalMovieDB.private = false;
         } else {
@@ -73,7 +73,7 @@ const personalMovieDB = {
    };
 personalMovieDB.start();
 // personalMovieDB.rememberMyMovies();
-// personalMovieDB.detectPersonalLvl();
-// personalMovieDB.writeMyGenres();
+ personalMovieDB.detectPersonalLvl();
+ personalMovieDB.writeMyGenres();
 // personalMovieDB.toggleVisibleMyDB(personalMovieDB.private);
 personalMovieDB.showMyDB();
